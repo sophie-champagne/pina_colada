@@ -1,0 +1,52 @@
+1. Guideline2
+2. 1.25X for videos 
+3. each pratice 5X times 
+4. study graph + practice  
+
+studying structure for data structure: 
+(1) First Dimension: array/list stack/linkedlist/map/set 
+(2) Second Dimension: Tree Graph / BST (ordered tree), AVL heap, disjoint set, Trie/ 
+(3) Speical: Bitwise, bloomfilter LRU Cache 
+
+Algos: The simplistic rule about all the algos is that all the complication can boil down to simple rules (if-else (logic flow)) 
+(1) if-else
+(2) for, which, while loop 
+(3) recursion (divide and conquer) 
+
+Search/ BFS/DFS 
+Dynamic Programming 
+Binary Search 
+Greedy
+Math/ Geo 
+
+MindNote for all the structual learning 
+
+How to solve a question:
+1. Clarification 
+2. Possible Solutions 
+   compare time space 
+3. coding 
+4. test cases 
+
+5 * 5 practice: 
+1. 5 min understand the question max 15 mins 
+2. compare the solutions 
+3. remember + repeat 
+4. leetcode (space + time) 
+5. One Day/ One Week/ pre-interview 
+
+Iterm2 + Zsh(Oh my Zsh installation guide) 
+https://medium.com/ayuth/iterm2-zsh-oh-my-zsh-the-most-power-full-of-terminal-on-macos-bdb2823fb04c
+VS Code 
+Pycharm (leetcode plugin) 
+
+
+https://google.github.io/styleguide/pyguide.html
+
+fn+delete 
+command +left/right 
+option + delete 
+
+
+
+
