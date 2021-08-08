@@ -1,0 +1,185 @@
+#Course website: https://u.geekbang.org/lesson/155?article=246042&utm_source=u_nav_web&utm_medium=u_nav_web&utm_term=Gdaxuelunbo
+
+Array 内存管理器 
+随机访问任何元素：增加删除数组元素 
+
+（1） Inserting 
+0  1  2 3 4 5 
+A  B  C  E F G (insert D) 
+
+O(n) 复杂度，平均是O(n/2) 复杂度
+
+删除元素： Z delete , size 减少
+
+（1） 判断数组的size 
+ (2) add size++ 
+ 
+ array copy (原地址，到index +1 位置） 
+ ArrayList source Code: 
+ https://developer.classpath.org/doc/java/util/ArrayList-source.html 
+ 
+ if they found out the list is limited (out of range, then they are going to expand the list) 
+ 
+ 170:   public void ensureCapacity(int minCapacity)
+ 171:   {
+ 172:     int current = data.length;
+ 173: 
+ 174:     if (minCapacity > current)
+ 175:       {
+ 176:         E[] newData = (E[]) new Object[Math.max(current * 2, minCapacity)];
+ 177:         System.arraycopy(data, 0, newData, 0, size);
+ 178:         data = newData;
+ 179:       }
+ 180:   }
+ 181: 
+ 
+ insert function to an array 
+ arraycopy: they coppy the array to a new destination 
+ 
+ 354:   public void add(int index, E e)
+ 355:   {
+ 356:     checkBoundInclusive(index);
+ 357:     modCount++;
+ 358:     if (size == data.length)
+ 359:       ensureCapacity(size + 1);
+ 360:     if (index != size)
+ 361:       System.arraycopy(data, index, data, index + 1, size - index);
+ 362:     data[index] = e;
+ 363:     size++;
+ 364:   }
+ 
+ #python deepcopy and copy 
+ https://docs.python.org/3/library/copy.html
+ 
+#A shallow copy constructs a new compound object and then (to the extent possible) inserts references into it to the objects found in the original.
+#A deep copy constructs a new compound object and then, recursively, inserts copies into it of the objects found in the original.
+which means the shallow copy is only making a new reference to the location but deepcopy is to construct an new object to the new list 
+
+### Since Arraylist has to leverage a lot of copy function therefore, linkedlist is introduced : good for frequent insertion and deletion 
+#Value/ and next to add pointers 
+
+Elements of linkedlist: 
+1. Node
+2. Next (pointer) , last element is pointing to null 
+3. Head 
+4. Tail 
+
+https://www.geeksforgeeks.org/implementing-a-linked-list-in-java-using-class/
+https://developer.classpath.org/doc/java/util/LinkedList-source.html
+
+General Approach of adding the new node: 
+1. Create a Node with Value and the next pointer 
+2. Point the prev pointer next to the inserting new pointer 
+3. The new inserting pointer next to be the original next pointer 
+
+The insertion is O(1) 
+
+Delete: Target Node 
+1. The next is jumping around the target node and directly pointing the next node 
+
+The insertion/ deletion is high efficient, but the visit of the node can be very time consuming O(n) 
+
+Time complexity: 
+1. Prepend: append node from the front and back 
+   append, insert and delete O(1)
+2. Lookup efficiency: O(n) 
+
+Array Complexity: 
+1. Prepend, append, lookup O(1) 
+2. insert delete O(n) 
+
+Skip List: (how to improve the linkedlist) , new in year 1989 
+for normal lookup array, you could do binary search 
+
+Skip list is only applied to ordered list 
+Skip List is similar to AVL Tree and binary search, the insert, delete and search is O(logn) complexity 
+Therefore, there are some good applications that can used this data structure like Redis and LevelDB (缓存，Jeff Dean invented LevelDB) 
+levelDB: https://en.wikipedia.org/wiki/LevelDB 
+
+Skip list implementation: 
+
+1. Ordered Linkedlist O(n) in lookup 
+2. How to accelerate the efficiency in the lookup table: 
+
+There is a fun comparison here in the notes: If you like accelerate your mind, you have to elevate your dimension. (如果要加速，那就要提升维度,维度信息增加会加速查找方法）
+
+第二级索引（second order) 
+第一级索引 (first order)           1 --- > 4 ---> 7 ---> 9  (skip linkedlist) 
+原始列表  (the lowest dimension)  1 -- > 2 ---> 3 --->4 -->8 
+
+time complexity in all these skip linkedlist: 
+the highest order: n/2 
+seond highest order: n/4 
+thrid highest order: n/8 
+k highest oreder: n/2 + n/4 +n/8+ n/16 ..... n/2^k 
+
+Assume there is K order in this situation: the highest order has 2 , which is n/(2^h) = 2 then h = log2(n) - 1 
+
+For any skip list lookup the time complexity is O(logn) 
+
+The downside of the skiplist, the maintenance cost is high, so therefore, the time complexity is logn 
+
+The space complexity is O(n) 
+
+Reference: 
+https://redisbook.readthedocs.io/en/latest/internal-datastruct/skiplist.html 
+https://www.zhihu.com/question/20202931
+
+LRU Cache: https://leetcode-cn.com/problems/lru-cache/ 
+
+Stack and Queue: 
+Stack: Last in first out (insert, delete O(1)) , lookup O(n)) 
+Queue: First in first out (insert, delete O(1)) , lookup(O(n))
+
+Stck/Queue + Hashmap: accelerate the lookup time 
+
+Other use: Deque: Double-End Queue  Deque is more widely used in the reality 
+
+they could be push and pop at the beginning / end 
+
+Insert/delete O(1) 
+Lookup O(n) 
+
+Python Stack Implementation: https://www.geeksforgeeks.org/stack-in-python/ 
+
+Python Queue Implementation: https://docs.python.org/3/library/queue.html
+
+Python Deque Implementation: https://docs.python.org/3/library/collections.html#collections.deque 
+Could be delete and add at the front and back / addfirst/last 
+
+PiorityQueue: Insert O(1) , VIP can go first 
+Python : https://www.geeksforgeeks.org/priority-queue-in-python/ 
+Python: https://docs.python.org/3/library/heapq.html 
+底层具体实现是heap, BST, AVL, red black tree, treap 
+抽象数据结构
+
+The high performance container: https://docs.python.org/2/library/collections.html 
+
+Java Priority Queue: 
+https://docs.oracle.com/javase/7/docs/api/java/util/PriorityQueue.html 
+Class, Methods 
+
+Everytime, we have to set a priority first, then execute the queue 
+
+Stack and Queue: 
+
+https://developer.classpath.org/doc/java/util/Stack-source.html
+http://fuseyism.com/classpath/doc/java/util/Queue-source.html
+
+Priority Queue
+Queue 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
