@@ -1,0 +1,106 @@
+#用add first 和add last 写Deque 代码： 
+
+#create a new linkedlist 
+deque = new LinkedList();
+#add the last elements in the new queue 
+deque.addLast("first");
+deque.addLast("second");
+deque.addLast("third");
+
+#add last in the deque on the new linkedlist object 
+addFirst = new LinkedList();
+#add the last elements in the new queue 
+addFirst.addFirst("first");
+addFirst.addFirst("second");
+addFirst.addFirst("third");
+
+#print out the deque 
+System.out.println(addFirst);
+
+#use peek function and print out the linkedlist 
+String str = addFirst.peekFirst();
+System.out.println(str);
+System.out.println(addFirst);
+
+#remove the elements 
+while(addFirst.size()>0){
+System.out.println(deque.removeFirst())
+}
+System.out.println(addFirst);
+
+#分析priority Queues with python 
+Priority Queue
+1.python的优先队列是用堆结构实现的，主要的方法都在lib/heapq.py代码中，源码中PriorityQueue类继承了Queue类，直接创建一个空的list。
+2.put和get方法直接调用了heappush和heappop
+3.headpq implementation: 
+The property of this data structure in Python is that each time the smallest of heap element is popped(min heap). 
+Whenever elements are pushed or popped, heap structure in maintained. 
+The heap[0] element also returns the smallest element each time.
+
+There are three opertaions that can be conducted on heapq: 
+1. heapify: using heap data structure and convert the iteratable into heap 
+2. heappush(heap,ele) 
+insert the element when the order is adjusted 
+3. heappop: 
+remove and return the samllest element from the heap, when the oreder is adjusted 
+4.heappushpop: it combines pop/push operation at the same time 
+5.heapreplace(heap,ele) :
+element is first popped, then the element is pushed.i.e, the value larger than the pushed value can be returned. 
+
+Furthur readings: https://realpython.com/python-heapq-module/
+
+#insert sample data code 
+import heapq
+
+li = [5,8,9,11]
+
+heapq.heapify(li)
+
+print ("The created heap is : ",end="")
+print (list(li))
+
+heapq.heappush(li,4)
+print ("The popped and smallest element is : ",end="")
+print (heapq.heappop(li))
+
+The created heap is : [1, 3, 9, 7, 5]
+The modified heap after push is : [1, 3, 4, 7, 5, 9]
+The popped and smallest element is : 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+②添加元素使用了heappush方法，先将元素append进列表，即放在了列表的最尾部，然后再调用_siftdown()方法进行上浮，这里其实就是一个堆排序的过程，通过 newitem 不断与父节点比较，这里用了位运算取代了除以 2 的操作，位运算毕竟更快。不一样的是这里缺少了元素交换的过程，而是计算出新元素最后所在的位置 pos 并进行的赋值。显然这是优化后的代码，减少了不断交换元素的冗余过程。
