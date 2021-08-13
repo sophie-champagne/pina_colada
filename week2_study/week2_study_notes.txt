@@ -1,0 +1,81 @@
+Hashtable, Mapping and set: 
+
+#map and set 
+Hashtable: key value, and we can access to a particular location and accelerate the speed of lookup 
+The function is called the hash function or storage is called the hash list 
+
+It maps to the index 
+telephone book 
+user info 
+LRU Cache 
+Redis 
+
+Example: 
+key: lies 
+hash function interger 9 
+
+Map and set: 
+
+Map: key-value set, the key can not be repeated
+new HashMap()/new TreeMap() 
+map.set(key,value) 
+map.has(key)
+map.size()
+map.clear() 
+
+
+Set: not repeatable in the elements 
+new HashSet()/new HashSet() 
+set.add(value) 
+set.delete(value) 
+set.has(value) 
+
+https://docs.oracle.com/javase/8/docs/api/java/util/Set.html
+https://docs.oracle.com/javase/7/docs/api/java/util/HashSet.html
+
+put function/get function 
+
+* Tree/Binary Tree/Binary Search Tree 
+Linked List is a special kind of Tree 
+Tree is a special kind of Graph 
+
+
+class TreeNode:
+    def __init__(self,val): 
+        self.val = val 
+        self.left, self.right = None, None 
+
+Why Tree exists: 
+1. Fibinacci Recursion: Recursion 
+2. AlphaGO: 棋盘状态扩散不同的树形结构
+
+
+Traversal: 
+1. Pre-order: root, left, right 
+2. In-order: left, root, right 
+3. Post-order: left, right,root 
+
+Binary Search Tree: Ordered Tree (ordered fashion) 
+
+Left Tree: < Root Node 
+Root Node > Right Tree 
+
+in order traversal 
+
+1. Lookup 
+2. Search 
+3. Delete 
+
+for the total linked list: 
+
+Heap: find the max or min value data structure 
+https://www.geeksforgeeks.org/binary-heap/
+
+
+
+
+
+
+
+
+
