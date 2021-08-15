@@ -71,6 +71,119 @@ for the total linked list:
 Heap: find the max or min value data structure 
 https://www.geeksforgeeks.org/binary-heap/
 
+Heap: 
+https://www.geeksforgeeks.org/binary-heap/
+
+Binary Heap: 
+(1) It is a complete Tree (sorted in the tree). Complete Tree means each child has leaves except for the bottom part. 
+(2) A binary heap is either a min-heap or max-heap 
+In a Min Binary Heap, the key at root must be minimum among all keys present in Binary Heap. 
+In a Max Binary Heap, the key at the root must be maximum among all keys present in the binary Heap. 
+
+The popular Heap: (Priority Queue) , but it is not implemented with binary search tree 
+1. Binary Heap 
+2. Fibonacci Heap (the heap is best in their effciency) 
+
+If this heap is the maximum heap: 
+1. find-max O(1) 
+2. delete: O(logN) 
+3. insert(create): O(logN) or O(1) 
+
+The implementation of the complete binary tree: level order for the binary tree 
+(01), left (2*i + 1) 
+(02), right(2*i + 2) 
+(03), parent node: floor((i-1)/2)
+
+Insertion: (OlogN)
+1. New element would be inserted in the tail (use array to implement) 
+2. Work up the heap and adjust the structure of the heap 
+3. HeapifyUP 
+
+Insertion: 
+Tree: 90 - 80 - 70 - 60 -40 -30 -20 
+insert: 90 - 80 - 70 - 60 - 30 - 20 - 85 (add 85 new element at the end of the array) 
+1. Add the element to the last element of the array 
+2. Check the attributes of the heap, since in heap, the rule is every parent's value should be bigger than the child node 
+3. Move up the 85 , compare the 85 to their parent node, if the 85 > the parent node, then move up. 
+4. if 85 > 40 then swap the values between 85 and 40 , if 85 > 80, then swap 
+5. end condition: unitl the 85 > 40 ,make sure the the root node is the largest 
+
+The time complexity: the depth of the tree. 
+
+Delete Max/ 
+
+1. Swap the tail element to the top element 
+2. HeapifyDown the heap: from the root to the down 
+3. Switch the heap to the bottom 
+
+Time Complexity for the delete the max: O(logn) 
+
+Binary Priority Queue: Heapq, 
+
+The detailed implementation of the heap: 
+https://shimo.im/docs/Lw86vJzOGOMpWZz2/read 
+
+Graph Introduction: 
+Graph(V,E) 
+
+Vertex: 度，入度和出度,点和点是否有链接
+Edge: undirected and directed graph, and weighted line 
+
+Adjacency Matrix: 邻阶矩阵 weighted: there are numbers which connected the vertex, and if they unweighted graph, they would only show 0/1 
+Adjacency list: The linked list to store the connection which are directly connected 
+
+Example: this shows that 
+0 is connected to 1 and 3 
+1 is connected to 0,2,3 
+2 is connected 1, 3, 4 
+
+0 --> 1 -- > 3 
+1 --> 0 --> 2 -->3 
+2 --> 1 -->3 --> 4 
+4 --> 2 
+
+If the graph is undirected unweighted: they would assign weights on the graphs 
+
+#The usual graph algos: remember the modules 
+
+DFS - Recursion 
+BFS - Recursion 
+
+DFS: there are some majors differencces between the Binary Tree and the DFS 
+visited = set() since DFS would have a terminator :make sure the nodes 
+
+def dfs(node,visited): 
+    
+    if node in visited: 
+       return 
+       
+    for next_node in node children(): 
+        if not next_node in visited: 
+           dfs(next_node,visited); 
+
+BFS: visited = set() loop through the nodes 
+
+
+The usual algos for Graphs: 
+1. number of isslands 
+2. Topological Sorting, DAG Graph 
+3. Shortest Path 
+4. Miimum Spanning Tree 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
