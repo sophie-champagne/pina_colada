@@ -1,1 +1,78 @@
+1. Recursion: 
 
+Recursion is self-loop and they just use itself as a person to loop through all the things: 
+自循环，不断的自身引用不同的
+
+Inception Movie 
+每一层递归时间会变慢，返回到上一层世界的会改变
+向下进入不同的梦境，向上原来的一层
+通过声音同步回到一层
+每一层的环境都是一层拷贝
+
+#stack 
+modules for recursion: 
+
+#recursion 
+def recursion(level,param1,param2): 
+    #recursion terminator (terminate condition) 
+    if level > max_level: 
+       process_result 
+       return 
+    
+    #process the logic in the current level 
+    process(level,data) 
+    
+    #drill down the level 
+    self recursion(level+1,p1...) 
+    
+    
+    #清扫当前层
+    
+#不要人肉进行递归，刚开始可以写状态树 
+#找到子问题，拆解可以重复的问题 （if else, for while loop) 
+#数学归纳法的思维 （n = 1, n=2, 当n 成立，同时n+1 成立） 
+
+3. 分治于回溯：动态规划
+
+递归状态树，对于一个问题划分成几个子问题： （subproblem) 
+divide and conquer question: 
+
+if problem is None: 
+   print result 
+   return 
+   
+#parepare data 
+data =prepare_data(problem) 
+subproblems = split_problem(problem,data) 
+
+#conquer subproblems 
+subresult1 = self.divide_conquer(subproblems[0],p1...) 
+subresult2 = self.divide_conquer(subproblem[1],p1....) 
+subresult3 = self.divide_conquer(subproblem[2],p1,...) 
+
+#merge the result together, revert the problems 
+result = process_result(subresult1,subresult2,subresult3..)
+
+Backtracking: 
+(one type of recursion) 
+分步解决问题
+找到一个可能存在的答案
+尝试所有的方法
+导致一次复杂度时间的计算
+
+The examples: 
+Climbing stairs: https://leetcode.com/problems/climbing-stairs/
+
+
+
+
+
+
+    
+ 
+ 
+   
+    
+
+
+     
