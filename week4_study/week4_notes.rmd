@@ -1,6 +1,8 @@
 DFS & BFS search: 
 
-模板： 
-```{python}
-print("Hello Python!")
+modules: 
+```
+def hello
+   puts "Hello world!"
+end
 ```
