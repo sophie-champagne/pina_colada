@@ -1,5 +1,6 @@
 DFS & BFS search: 
 
 模板： 
-```{r test-py-again, ref.label='test-python'}
+```{python}
+print("Hello Python!")
 ```
