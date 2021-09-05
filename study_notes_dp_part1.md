@@ -148,13 +148,7 @@ First thoughts about the solution:
 
 This question boils down to calcuate the edit distance between the two strings: 
 
-	A	B	A	Z	D	C
-B	0	1	1	1	1	1
-A	1	1	2	2	2	2
-C	1	1	2	2	2	3
-B	1	2	2	2	2	3
-A	1	2	3	3	3	3
-D	1	2	3	3	4	4![image](https://user-images.githubusercontent.com/86581871/132112886-01998223-6b29-421d-b589-d0bcb7d0ed57.png)
+![image](https://user-images.githubusercontent.com/86581871/132112886-01998223-6b29-421d-b589-d0bcb7d0ed57.png)
 
 
 ```
