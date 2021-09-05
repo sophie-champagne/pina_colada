@@ -184,8 +184,7 @@ DP solver general rules:
 
 
 
-
-
+![image](https://user-images.githubusercontent.com/86581871/132112632-0167e42d-3f2a-4d57-9ead-49a55e545699.png)
 
 
 
