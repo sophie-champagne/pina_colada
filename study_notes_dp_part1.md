@@ -174,6 +174,13 @@ class Solution:
 Top-down method: Recursion + Memorization 
 Bottom-up method: Formula 
 
+
+Second Example: 
+
+https://leetcode.com/problems/climbing-stairs/description/
+
+
+
 DP solver general rules: 
 1. 打破思维惯性
 2. 理解复杂逻辑关键
