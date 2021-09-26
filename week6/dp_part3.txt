@@ -1,0 +1,18 @@
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock/submissions/
+
+'''
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        
+        mx=0
+        
+        #get the start from the end, and each time minus 1 position 
+        for i in range(len(prices)-1,0,-1):
+            #get the last i element and the array 
+            minvalue=min(prices[i::-1])
+            #compare each array and assign to the new value to temp mx 
+            if mx<(prices[i]-minvalue):
+                mx=prices[i]-minvalue
+        return mx
+'''
+
