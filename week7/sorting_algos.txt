@@ -1,0 +1,64 @@
+Time Complexity: O(n^2), Space Complexity: O(1) 
+
+insertion sort
+bubble sort
+selection sort
+
+Time Complexity: O(nlog2n), space complexity: O(1) 
+Heap Sort: Heap Sort 
+Quick Sort: 
+merge sort 
+
+Bubble Sort: Exchange items until fully sorted 
+
+/*sorting algos*/ 
+function bubbleSort(arr) {
+    var len = arr.length;
+    for (var i = 0; i < len - 1; i++) {
+        for (var j = 0; j < len - 1 - i; j++) {
+            if (arr[j] > arr[j+1]) {        // compare element 
+                var temp = arr[j+1];        // exchange the elements
+                arr[j+1] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    return arr;
+}
+
+Selction Sort: Mark the temp until you find something is smaller 
+
+function selectionSort(arr) {
+    var len = arr.length;
+    var minIndex, temp;
+    for (var i = 0; i < len - 1; i++) {
+        minIndex = i;
+        for (var j = i + 1; j < len; j++) {
+            if (arr[j] < arr[minIndex]) {     // find the min value 
+                minIndex = j;                 // store the min value 
+            }
+        }
+        temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
+    }
+    return arr;
+
+Insertion Sort: Insert the elements that are needed to be inserted 
+
+function insertionSort(arr) {
+    var len = arr.length;
+    var preIndex, current;
+    for (var i = 1; i < len; i++) {
+        preIndex = i - 1;
+        current = arr[i];
+        while (preIndex >= 0 && arr[preIndex] > current) {
+            arr[preIndex + 1] = arr[preIndex];
+            preIndex--;
+        }
+        arr[preIndex + 1] = current;
+    }
+    return arr;
+}
+
+
